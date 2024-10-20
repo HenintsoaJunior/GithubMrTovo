@@ -98,29 +98,20 @@
                             </div>
                         </div>
 
-
                         <div class="row mb-3">
-                            <div class="col">
-                                <label for="date_debut" class="form-label">Date Debut</label>
-                                <input
-                                type="date"
+                        <div class="col">
+                            <input
+                                type="hidden"
                                 class="form-control"
-                                id="date_debut"
-                                name="date_debut"
-                                />
-                            </div>
+                                id="annee"
+                                name="annee"
+                                value="<?= esc(session()->get('annee')) ?>"
+                                required
+                                min="1900"
+                                max="2100"
+                            />
                         </div>
 
-                        <div class="row mb-3">
-                            <div class="col">
-                                <label for="date_fin" class="form-label">Date Fin</label>
-                                <input
-                                type="date"
-                                class="form-control"
-                                id="date_fin"
-                                name="date_fin"
-                                />
-                            </div>
                         </div>
 
                         <button type="submit" class="btn btn-primary">Valider</button>

@@ -194,8 +194,8 @@
                 </ul>
             </li> -->
             <li class="nav-item">
-                <a class="nav-link" href="<?= site_url('formulaire_analytique'); ?>" style="background-color: whitesmoke;color:black">
-                    <i class="bi bi-file-earmark-text"></i>
+                <a class="nav-link" href="<?= site_url('exerciceform'); ?>" style="background-color: whitesmoke;color:black">
+                    <i class="bi bi-file-earmark-text" style="margin-right: 3.6px; color:black"></i>
                     <span>FORMULAIRE ANALYTIQUE</span>
                 </a>
             </li>
@@ -203,14 +203,14 @@
 
             <li class="nav-item">
                 <a class="nav-link" href="<?= site_url('global'); ?>" style="background-color: whitesmoke;color:black">
-                    <i class="bi bi-table"></i>
+                    <i class="bi bi-table" style="margin-right: 3.6px; color:black"></i>
                     <span>TABLEAU ANALYTIQUE</span>
                 </a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="<?= site_url('total_montant_analytique'); ?>" style="background-color: whitesmoke; color:black">
-                    <i class="bi bi-coin"></i>
+                    <i class="bi bi-coin" style="margin-right: 3.6px; color:black"></i>
                     <span>ARGENT ANALYTIQUE</span>
                 </a>
             </li>
@@ -220,15 +220,22 @@
 
             <li class="nav-item">
                 <a class="nav-link" href="<?= site_url('cout_elevage_list'); ?>" style="background-color: whitesmoke;color:black">
-                    <i class="bi bi-cash"></i>
+                    <i class="bi bi-cash" style="margin-right: 3.6px; color:black"></i>
                     <span>COUT ELEVAGE</span>
                 </a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="<?= site_url('cout_production_general_list'); ?>" style="background-color: whitesmoke;color:black">
-                    <i class="bi bi-cash"></i>
+                    <i class="bi bi-cash" style="margin-right: 3.6px; color:black"></i>
                     <span>COUT PRODUCTION</span>
+                </a>
+            </li>
+
+            <li style="color: red;" class="nav-item">
+                <a class="nav-link" href="<?= base_url('logout'); ?>" style="background-color: whitesmoke;color:red">
+                    <i class="fas fa-sign-out-alt" style="margin-right: 3.6px; color:red"></i>                  
+                    <span>Logout</span>
                 </a>
             </li>
         </ul>

@@ -17,6 +17,18 @@ use CodeIgniter\Controller;
 use Exception;
 
 class AnalytiqueController extends BaseController {
+
+    public function exerciceform():string {
+        return view('exercice');
+    }
+    public function exercice() {
+        $annee = $this->request->getVar('annee');
+        session()->set('annee', $annee);
+        
+        return redirect()->to('/formulaire_analytique');
+    }
+    
+    
     public function global()
     {
         $analytiqueModel = new AnalytiqueModel();
@@ -79,10 +91,10 @@ class AnalytiqueController extends BaseController {
 
         try {
             $exercice = new ExercicesModel();
-            $date_debut = $this->request->getVar('date_debut');
-            $date_fin = $this->request->getVar('date_fin');
+            $annee = $this->request->getVar("annee");
+            $date_debut = "01-01-$annee";
+            $date_fin = "31-12-$annee";
 
-            // Créez un nouvel exercice
             $exercice->setDate_debut($date_debut);
             $exercice->setDate_fin($date_fin);
             $exercice->createExercice();

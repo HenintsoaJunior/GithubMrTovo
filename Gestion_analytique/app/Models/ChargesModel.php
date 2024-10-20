@@ -161,4 +161,18 @@ class ChargesModel extends Model {
 	public function deleteCharge() {
 		return $this->where('id_charge', $this->id_charge)->delete($this->id_charge);
 	}
+
+	public function get_charge_unite($id_charge = null) {
+		$builder = $this->db->table('v_charge_unite');
+		
+		if ($id_charge !== null) {
+			$builder->where('id_charge', $id_charge);
+		}
+	
+		$builder->select('unite');
+		$query = $builder->get();
+		
+		return $query->getRowArray()['unite'] ?? null;
+	}
+	
 }

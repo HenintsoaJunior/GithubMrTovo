@@ -28,6 +28,7 @@ class AmortissementsController extends BaseController {
 		$amortissementsModel->createAmortissement();
 		return $this->response->redirect(site_url('/amortissements-list'));
 	}
+	
 	public function singleAmortissement($id = null) {
 		$amortissementsModel = new AmortissementsModel();
 		$data['amortissement_obj'] = $amortissementsModel->getAmortissementById($id);
