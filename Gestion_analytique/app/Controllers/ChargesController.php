@@ -40,7 +40,7 @@ class ChargesController extends BaseController {
 		$chargesModel->setId_unite($this->request->getVar('id_unite'));
 		$chargesModel->setId_type_charge($this->request->getVar('id_type_charge'));
 		$chargesModel->setId_nature_charge($this->request->getVar('id_nature_charge'));
-		$chargesModel->createCharge();
+		// $chargesModel->createCharge();
 		return $this->response->redirect(site_url('/charges-list'));
 	}
 	public function singleCharge($id = null) {
@@ -76,5 +76,19 @@ class ChargesController extends BaseController {
 		$chargeModel->setId_charge($id);
 		$data['charge'] = $chargeModel->deleteCharge();
 		return $this->response->redirect(site_url('/charges-list'));
+	}
+
+	public function get_charge_unite() {
+		$chargeModel = new ChargesModel();
+		$id_charge = $this->request->getVar('id_charge');
+		$charge_unite = $chargeModel->get_charge_unite($id_charge);
+		
+		// Préparer la réponse JSON
+		$response = [
+			'status' => 'success',
+			'charge_unite' => $charge_unite
+		];
+	
+		return $this->response->setJSON($response);
 	}
 }
